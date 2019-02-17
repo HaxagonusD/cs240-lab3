@@ -1,0 +1,560 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="author" content="NİLGÜN İLAYDA AKALIN"/>
+	<meta name="created" content="2019-02-14T16:21:00"/>
+	<meta name="changedby" content="NİLGÜN İLAYDA AKALIN"/>
+	<meta name="changed" content="2019-02-14T16:22:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.98in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2 }
+	</style>
+</head>
+<body lang="en-US" dir="ltr">
+<p style="margin-bottom: 0.11in; line-height: 108%">#### CS 240 -
+Spring 2018</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"># Lab 3 -
+Creating Larger Programs</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">## Due Date:
+11:59 p.m., February 13th, 2019</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">*All programs
+will be tested on the machines in the Q22 lab. If your code does not
+run on the system in this lab, it is considered non-functioning EVEN
+IF IT RUNS ON YOUR PERSONAL COMPUTER. Always check that your code
+runs on the lab machines before submitting.*</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">### Provided
+Files and Expected Output</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* _Files_</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * lab3.cpp</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* _Expected
+Command &gt; Output_</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Test
+Commands we will run</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * make</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * make
+run</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * make
+memcheck</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * make
+clean</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Sample
+Output (with our test case):</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```shell</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ./lab3</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        TEST #1:
+Test Planet Hill Creation with 0 planets</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">       
+========================PASS========================</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        TEST #2:
+Test Add 1 Planet</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">       
+========================PASS========================</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        TEST #3:
+Add Many Planets</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">       
+========================PASS========================</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        TEST #4:
+Delete Planets</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">       
+========================PASS========================</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        TEST #5:
+Orbit Planets Still Works</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">       
+========================PASS========================</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        TEST #6:
+Print Hill Information and Free Memory</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        The star
+has 481 planets.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        Planets:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        Planet
+g10 is 2741 miles away at position 215 around the star.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        Planet
+h11 is 2105 miles away at position 8 around the star.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ...</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        Planet
+r499 is 2322 miles away at position 344 around the star.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">       
+========================PASS========================</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        All Tests
+Passed.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        Don\'t
+forget to run with Valgrind and submit your commit hash to MyCourses!</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">### Grading
+Rubric</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">**_TOTAL: 20
+points_**</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* **Part A: 2
+points**</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Has
+separate Planet and Star implementation and header files [2 points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* **Part B: 18
+points**</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Passes test
+#1 [3 point]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Passes test
+#2 [2 points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Must
+allocate memory for planets with `new`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Passes test
+#3 [3 points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Must
+allocate memory for planets with `new`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Passes test
+#4 [3 points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Must
+deallocate memory for planets with `delete`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Passes test
+#5 [2 point]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Passes test
+#5 [2 points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Passes test
+#6 [3 points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Output
+prepend planet type (r,h,g) to Planet id</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* **Part C:**</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * If memory
+error, memory leak, no 'memcheck' target [-5 points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Repository
+includes .o files or binary [-1 point]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Does not
+follow [Style
+guidelines](https://drive.google.com/open?id=1a5I7XhhCDRHoS8LUfILu3y2la4wW8HHh4olO30YvMVk)[-3
+points]</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Your
+submission will not be accepted if:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Does
+not follow requested project structure and submission format</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Does
+not compile</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">### Guidelines</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">This is an
+individual lab assignment. You must do the vast majority of the work
+on your own. It is permissible to consult with classmates to ask
+general questions about the assignment, to help discover and fix
+specific bugs, and to talk about high level approaches in general
+terms. It is not permissible to give or receive answers or solution
+details from fellow students.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">You may research
+online for additional resources; however, you may not use code that
+was written specifically *to* solve the problem you have been given,
+and you may not have anyone else help you write the code or solve the
+problem. You may use code snippets found online, providing that they
+are appropriately and clearly cited, within your submitted code.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">*By submitting
+this assignment, you agree that you have followed the above
+guidelines regarding collaboration and research.*</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">***</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">The goal of Lab 3
+is to extend your previous lab by refactoring your previous code and
+adding a few new features. In particular: you will move most of your
+memory usage to the heap rather than the stack, add the ability to
+randomly delete an ant from the hill, enable a battle system, and
+further break your code out into separate files.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">#### (Parts A
+must be completed in lab)</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">## Part A:
+Refactoring the Star Program</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">Refactor your C++
+program to take advantage of dynamic memory (the heap). Any changes
+to you previous code will be highlighted with a :warning: symbol. You
+should make the following changes to your Star and Planet classes:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">Break your Star
+and Planet classes into two different files. This means you will need
+to alter your makefile to compile Star.cpp and Planet.cpp into
+separate object files.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">### Planet</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">The Planet class
+will now only need one constructor that takes an ID as a value.
+Position should be set to a random value between 0-359 (inclusive).
+Your Planet class should already have the following public interface:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* public methods:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `Planet(int
+distance, int id)`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * A value
+constructor that sets the Planet’s `id` to a unique value and its
+`distance` to a random number between 0 to 3000 (in millions of
+miles).</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: You should also randomly select a planet type between
+rocky, habitable, and gaseous. Add a new private variable, `char
+type` that represents the planet type with a character: 'h' =
+habitable, 'r'=rocky, 'g'=gaseous</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: The `pos` should now be set to a random number between
+0-359.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+orbit()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Moves
+the planet +1 unit around the Star.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+Your position should always be in the range 0-359.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Returns
+the planet's new position</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+getID()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * returns
+the Planet’s ID number</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+getDistance()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * returns
+the Planet's distance from the Star</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+getPosition()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * returns
+the Planet's position relative to the Star</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">:bulb: Next, you
+may want to add an additional public interface elements to the Planet
+class.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* `char
+getType()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * return the
+type of the planet as a single character</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">Alter the 4
+getter methods below to be inline methods. Recall from class that an
+inline method is defined within the class, but should be limited to
+very short methods such as getters and setters. This means that in
+your Planet.cpp should only have the value constructor and the orbit
+method after these changes.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* `int getID()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* `int
+getDistance()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* `int
+getPosition()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* `char
+getType()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">__Show your TA
+your code.__</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">__--END OF IN LAB
+REQUIRED WORK--__</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">_You may continue
+to work on the remainder of the lab on your own time or in lab_</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">## Part B:
+Container Classes</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">### Star</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">_Please read the
+description below describing how to refactor and add to your AntHIll
+class. I will only describe the changes that should be made to your
+class. Anything not mentioned does not change._</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* private:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+max_planets`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: The max_planets variable is no longer needed and should be
+removed.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* public:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `Planet **
+planets`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: Your array of planets should become an array of planet
+pointers allocated on the heap. This means you will need to declare
+it as a double pointer, and initialize it to NULL in the constructor.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `Star()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: The constructor no longer needs an initializing value. It
+should set the current number of planets to 0 and the planets array
+pointer to NULL.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `~Star()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * You
+must add a destructor to deallocate any remaining planets when the
+Star is deleted.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+addPlanet()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: The method to add a planet should now return the ID of the
+newly created Planet. The planet must be created with new (on the
+heap), and the resulting pointer stored in the Planet array.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * This
+means that each time you add a Planet to the Star, you will have to:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+allocate a new array of size 1 + the current number of Planets</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+copy all the pointers over to the new array</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+Create a new Planet object</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            * Put
+the resulting Planet object pointer in the new array</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+update the current number of Planets</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+free the old array</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+Point the planet array to the new array</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `bool
+removePlanet(int)`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Takes a
+Planet’s ID as a parameter, and removes the Planet from the Star,
+completely freeing the Planet’s memory. You must return `true` upon
+successful deletion and `false` on failure if the ID isn't found.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * You
+must also shrink the size of the Planet array storing the Star’s
+Planets. This means you will have to:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+allocate a new array of size 1 - the current number of Planets</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+copy all the pointers over to the new array except the pointer with
+the ID that matches the Planet to be deleted.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+delete the Planet object with the matching ID</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+update the current number of Planets</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+free the old array</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+Point the planet array to the new array</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `Planet *
+getPlanet(int)`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Takes
+an Planet’s ID and returns a pointer to the Planet. If the Planet
+is not found, it returns NULL.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `void
+orbit()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: Although the `orbit` method does not change much, you will
+have to alter it to use pointers.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `void
+printStarInfo()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * Prints
+the Star information. (See sample output above)</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: Planet ids should be prepended with the planet type.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+getCurrentNumPlanets()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: move to be inline</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * `int
+getMaxPlanets()`</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+:warning: no longer needed and may be removed</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">## Part C:
+Valgrind</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">After you have
+passed all of the tests, you will also need to run your code with
+Valgrind to ensure you do not have any memory leaks or memory errors.
+Valgrind is a unix tool that allows you to run many different kinds
+of memory tests on your code. For this class we will be concerned
+with two things</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* __Memory
+Leaks__</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Valgrind
+catches, and if you compile with the `-g` flag, tells you where the
+memory leaks are (usually).</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* __Memory
+Errors__</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * If you are
+using uninitialized memory or you are overflowing a buffer, Valgrind
+will catch it.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">Below is a sample
+of how to run Valgrind, and the output you should see:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```shell</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        valgrind
+./lab2</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        … #your
+code runs</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==
+HEAP SUMMARY:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==
+    in use at exit: 0 bytes in 0 blocks</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==
+  total heap usage: 5 allocs, 5 frees, 488 bytes allocated</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==
+All heap blocks were freed -- no leaks are possible</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==
+For counts of detected and suppressed errors, rerun with: -v</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        ==18210==
+ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">__For every
+subsequent lab you must have 0 leaks and 0 errors or you will lose
+points.__</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">## Part D : Code
+Organization and Submission</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">* Required code
+organization:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * lab3.cpp
+(driver code - You must include this file in your submission)</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * Star.h/.cpp</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    *
+Planet.h/.cpp</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">    * makefile</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        *
+executable should be called: lab3</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">        * You
+must have the following targets in your makefile:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+`all` - only compiles your source code using separate compilation for
+each .cpp file</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+`clean` - removes all object files and binary executables</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+`run` - compiles if necessary and runs your executable</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">            *
+`memcheck` - compiles your source if necessary, then runs your
+executable with valgrind</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">Below is just a
+reminder of the commands you should use to submit your code. If you
+cannot remember the exact process, please review lab 1.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">_These commands
+all presume that your current working directory is within the
+directory tracked by `git`._</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">You will need to
+do the following when your submission is ready for grading.</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```shell</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">git commit -am
+&quot;final commit&quot;</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">git push</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">To complete your
+submission, you must copy and paste the commit hash into MyCourses.
+Go to MyCourses, select CS240, and then assignments. Select Lab 3,
+and where it says text submission, paste your commit hash. You can
+get your latest commit hash with the following command:</p>
+<p style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```shell</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">git rev-parse
+HEAD</p>
+<p style="margin-bottom: 0.11in; line-height: 108%">```</p>
+</body>
+</html>
